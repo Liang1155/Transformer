@@ -250,7 +250,7 @@ if __name__ == "__main__":
     optimizer = torch.optim.AdamW(model.parameters(),lr = 3e-4)
 
     batch_size = 32
-    block_size = 8
+    block_size = 256
     def generate_text(model,start_str,max_new_tokens,block_size,device):
         model.eval()
         context = torch.tensor(encode(start_str),dtype=torch.long,device=device).unsqueeze(0)
